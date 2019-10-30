@@ -22,30 +22,6 @@ export default class Repository extends Component {
     page: 1,
   };
 
-  // async componentDidMount() {
-  //   const { match } = this.props;
-
-  //   const repoName = decodeURIComponent(match.params.repository);
-
-  //   const filterDefault = 'all';
-
-  //   const [repository, issues] = await Promise.all([
-  //     api.get(`/repos/${repoName}`),
-  //     api.get(`/repos/${repoName}/issues`, {
-  //       params: {
-  //         state: filterDefault,
-  //         per_page: 10,
-  //       },
-  //     }),
-  //   ]);
-
-  //   this.setState({
-  //     repository: repository.data,
-  //     issues: issues.data,
-  //     loading: false,
-  //   });
-  // }
-
   async componentDidMount() {
     const { page, stateActual } = this.state;
     this.loadIssues(stateActual, page);
